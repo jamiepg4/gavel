@@ -1,14 +1,10 @@
 {
-  "name": "gulp-starter",
-  "version": "0.1.1",
-  "description": "Gulp starter with common tasks and scenarios",
+  "name": "GAVEL",
+  "version": "0.1",
+  "description": "Auction tool",
   "repository": {
     "type": "git",
-    "url": "git://github.com/greypants/gulp-starter.git"
-  },
-  "browser": {
-    "underscore": "backbone/node_modules/underscore",
-    "plugin": "./src/javascript/vendor/jquery-plugin.js"
+    "url": "git://github.com/fusioneng/hammer.git"
   },
   "browserify": {
     "transform": [
@@ -44,7 +40,6 @@
     "watchify": "~1.0.2"
   },
   "dependencies": {
-    "backbone": "~1.1.2",
     "jquery": "~2.1.0"
   }
 }
