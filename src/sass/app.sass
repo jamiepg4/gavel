@@ -2,15 +2,26 @@
 @import mixins
 @import typography
 
+html
+	height: 100%
+
 body
 	margin: 0
 	padding: 0
+	height: 100%
 	@include display-flex()
+	@include flex-direction(column)
 
 header
-	background-color: gray
+	background-color: #49B1DA
 	width: 100%
 	color: white
+	padding: 10px
+
+section.main
+	@include flex-grow(3)
+	background-color: #3B3A38
 
 h1
 	margin: 0
+	text-align: center
