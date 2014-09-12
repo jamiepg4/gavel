@@ -32,6 +32,10 @@ h1
 	margin: 0
 	text-align: center
 
+div.buttons
+	margin: 1em auto
+	width: 250px
+
 .commission
 	@include display-flex()
 	@include flex-direction(row)
@@ -39,12 +43,15 @@ h1
 	padding: 10px 40px
 	margin-left: 20px
 	margin-right: 20px
+	max-width: 400px
+	margin: 0 auto
 
 .commission div
 	@include flex-grow(1)
 	color: white
 	padding: 10px
 	border: 1px solid white
+	text-align: center
 
 .commission div:first-child
 	border-top-left-radius: 5px
@@ -53,3 +60,16 @@ h1
 .commission div:last-child
 	border-bottom-right-radius: 5px
 	border-top-right-radius: 5px
+
+.buttons input
+	background-color: #4DBCEA
+	color: white
+	padding: 5px
+	box-shadow: 0px 1px 0px rgba(0,0,0,0.7)
+	border-radius: 5px
+	border: 1px solid gray
+
+section.main span
+	color: white
+	font-weight: bold
+
