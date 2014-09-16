@@ -1,34 +1,42 @@
 [
 	{
 		"name": "New York",
-		"rate": 10
+		"rate": 10,
+		"currency": "$"
 	},
 	{
 		"name": "London",
-		"rate": 40
+		"rate": 40,
+		"currency": "£"
 	},
 	{
 		"name": "Paris",
-		"rate": 40
+		"rate": 40,
+		"currency": "€"
 	},
 	{
 		"name": "Milan",
-		"rate": 40
+		"rate": 40,
+		"currency": "€"
 	},
 	{
 		"name": "Geneva",
-		"rate": 40
+		"rate": 40,
+		"currency": "Fr"
 	},
 	{
 		"name": "Hong Kong",
-		"rate": 40
+		"rate": 40,
+		"currency": "HK$"
 	},
 	{
 		"name": "Beijing",
-		"rate": 40
+		"rate": 40,
+		"currency": "¥"
 	},
 	{
 		"name": "Amsterdam",
-		"rate": 40
+		"rate": 40,
+		"currency": "€"
 	}
 ]
