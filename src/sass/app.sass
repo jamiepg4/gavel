@@ -9,6 +9,7 @@ body
 	margin: 0
 	padding: 0
 	height: 100%
+	overflow-x: hidden
 	@include display-flex()
 	@include flex-direction(column)
 
@@ -16,7 +17,6 @@ header
 	background-color: #49B1DA
 	width: 100%
 	color: white
-	padding: 10px
 
 .strapline
 	display: block
@@ -27,6 +27,11 @@ header
 section.main
 	@include flex-grow(3)
 	background-color: #3B3A38
+
+section.main span
+	width: 100%
+	text-align: center
+	display: block
 
 h1
 	margin: 0

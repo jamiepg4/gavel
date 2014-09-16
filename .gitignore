@@ -3,5 +3,4 @@
 build
 Desktop.ini
 node_modules
-fusion-static.p12
-fusion-static.pem
+keys

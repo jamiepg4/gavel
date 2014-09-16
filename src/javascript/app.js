@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+var queue = require('queue-async');
 
 Backbone.$ = $;
 
