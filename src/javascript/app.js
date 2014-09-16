@@ -1,9 +1,14 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
+window.jQuery = $;
+
+require('./autoNumeric');
+
 Backbone.$ = $;
 
 var app = {};
+var jQuery = $.noConflict();
 
 $(function () {
 
@@ -28,6 +33,8 @@ $(function () {
         },
 
         initialize: function () {
+            $('#hammer').autoNumeric('init');
+            $('#value').autoNumeric('init');
         },
 
         updateValue: function () {
