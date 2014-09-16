@@ -1,6 +1,8 @@
 @import compass
 @import mixins
+@import variables
 @import typography
+
 
 html
 	height: 100%
@@ -12,9 +14,10 @@ body
 	overflow-x: hidden
 	@include display-flex()
 	@include flex-direction(column)
+	background-color: blue
+	width: 300px
 
 header
-	background-color: #49B1DA
 	width: 100%
 	color: white
 
@@ -22,11 +25,11 @@ header
 	display: block
 	text-align: center
 	color: #3A91B2
-	font-weight: bold
+	font-size: 12px
+	color: $bright-color-opacity
 
 section.main
 	@include flex-grow(3)
-	background-color: #3B3A38
 
 section.main span
 	width: 100%
@@ -56,10 +59,12 @@ div.buttons
 
 .commission div
 	@include flex-grow(1)
-	color: white
+	color: $bright-color
 	padding: 10px
-	border: 1px solid white
+	// border: 1px solid white
 	text-align: center
+	font-size: 24px
+	font-weight: 900
 
 .commission div:first-child
 	border-top-left-radius: 5px
@@ -70,17 +75,15 @@ div.buttons
 	border-top-right-radius: 5px
 
 .buttons select
-	background-color: #4DBCEA
-	color: white
-	padding: 5px
-	box-shadow: 0px 1px 0px rgba(0,0,0,0.7)
-	border-radius: 5px
-	border: 1px solid gray
+	@include dark-button
 	-webkit-appearance: none
 
 section.main span
-	color: white
-	font-weight: bold
+	color: $dark-color-opacity
+	font-weight: 700
+	font-size: 16px
+	display: block
+	text-align: center
 
 .inputs
 	width: 320px

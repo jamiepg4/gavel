@@ -2,3 +2,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+@mixin dark-button {
+	border-radius: 5px;
+	width: 100%;
+	text-align: center;
+	padding: 16px;
+	color: $bright-color;
+	background: rgba(23,15,15,0.35);
+	border: 1px solid #141414;
+	-moz-box-shadow:    0px 2px 2px 0px rgba(0,0,0,0.24);
+	box-shadow:         0px 2px 2px 0px rgba(0,0,0,0.24);
+}
