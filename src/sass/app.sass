@@ -34,7 +34,7 @@ h1
 
 div.buttons
 	margin: 1em auto
-	width: 250px
+	display: table
 
 .commission
 	@include display-flex()
@@ -61,13 +61,14 @@ div.buttons
 	border-bottom-right-radius: 5px
 	border-top-right-radius: 5px
 
-.buttons input
+.buttons select
 	background-color: #4DBCEA
 	color: white
 	padding: 5px
 	box-shadow: 0px 1px 0px rgba(0,0,0,0.7)
 	border-radius: 5px
 	border: 1px solid gray
+	-webkit-appearance: none
 
 section.main span
 	color: white
