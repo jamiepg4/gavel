@@ -10,6 +10,11 @@ Backbone.$ = $;
 var app = {};
 var jQuery = $.noConflict();
 
+var autoNumericOptions = {
+    'aDec': '.',
+    'aSign': '$'
+};
+
 $(function () {
 
     'use strict';
@@ -33,14 +38,14 @@ $(function () {
         },
 
         initialize: function () {
-            $('#hammer').autoNumeric('init');
-            $('#value').autoNumeric('init');
+            $('#hammer').autoNumeric('init', autoNumericOptions);
+            $('#value').autoNumeric('init', autoNumericOptions);
         },
 
         updateValue: function () {
-            var initial = parseInt($('#hammer').val(), 10);
+            var initial = parseInt($('#hammer').autoNumeric('get'), 10);
 
-            $('#value').val(initial * 2);
+            $('#value').autoNumeric('set', initial * 2);
         }
 
     });
