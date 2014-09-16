@@ -1,6 +1,5 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
-var queue = require('queue-async');
 
 Backbone.$ = $;
 
@@ -10,7 +9,15 @@ $(function () {
 
     'use strict';
 
-    var AppView = Backbone.View.extend({
+    var Auction = Backbone.Model.extend();
+
+    var AuctionList = Backbone.Collection.extend({
+        model: Auction,
+        url: 'auctions.json'
+    });
+
+
+    var AuctionView = Backbone.View.extend({
 
         el: '#gavel',
         events: {
@@ -29,6 +36,16 @@ $(function () {
             $('#value').val(initial * 2);
         }
 
-    }), appView = new AppView({el: $('#gavel')});
+    });
+
+    var auctions = new AuctionList();
+
+    var auctionView = new AuctionView({el: $('#gavel'), model: auctions});
+
+    auctions.fetch({reset: true});
+
+    auctions.bind('reset', function () {
+        console.log(auctions);
+    });
 
 });

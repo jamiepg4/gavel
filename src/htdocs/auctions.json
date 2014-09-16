@@ -1,0 +1,34 @@
+[
+	{
+		"name": "New York",
+		"rate": 10
+	},
+	{
+		"name": "London",
+		"rate": 40
+	},
+	{
+		"name": "Paris",
+		"rate": 40
+	},
+	{
+		"name": "Milan",
+		"rate": 40
+	},
+	{
+		"name": "Geneva",
+		"rate": 40
+	},
+	{
+		"name": "Hong Kong",
+		"rate": 40
+	},
+	{
+		"name": "Beijing",
+		"rate": 40
+	},
+	{
+		"name": "Amsterdam",
+		"rate": 40
+	}
+]
