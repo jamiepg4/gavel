@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 
 Backbone.$ = $;
 
-var app = app || {};
+var app = {};
 
 $(function () {
 
@@ -13,20 +13,21 @@ $(function () {
 
         el: '#gavel',
         events: {
-            'click #button': 'clickButton'
+            'click #button': 'clickButton',
+            'change input#hammer': 'updateValue',
+            'change input#value': 'updateValue',
+            'keypress': 'updateValue'
         },
 
         initialize: function () {
-            console.log('initialise gavel');
         },
 
-        click: function () {
-            console.log('clicked button');
+        updateValue: function () {
+            var initial = parseInt($('#hammer').val(), 10);
+
+            $('#value').val(initial * 2);
         }
 
-
-    });
-
-    var appView = new AppView({el: $('#gavel')});
+    }), appView = new AppView({el: $('#gavel')});
 
 });
