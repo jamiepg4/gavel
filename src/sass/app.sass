@@ -38,7 +38,9 @@ section.main span
 	width: 100%
 	text-align: center
 	display: block
-	margin-bottom: 10px
+	color: $dark-color-opacity
+	font-weight: 700
+	font-size: 16px
 
 section.main span svg
 	position: relative
@@ -67,6 +69,7 @@ div.buttons
 
 .buttons select
 	@include dark-button
+	padding: 16px
 	font-size: 16px
 	-webkit-appearance: none
 
@@ -120,13 +123,6 @@ div.buttons
 .commission-graph section div:first-child
 	text-align: left
 
-section.main span
-	color: $dark-color-opacity
-	font-weight: 700
-	font-size: 16px
-	display: block
-	text-align: center
-
 .inputs .text
 	@include display-flex()
 	@include flex-direction(row)
@@ -143,9 +139,19 @@ section.main span
 .inputs .result
 	@include display-flex()
 	@include flex-direction(row)
-	max-width: 280px
+	max-width: 260px
 	margin: 0 auto
+	padding: 10px
+	@include white-button
 
-input
+.inputs .result input
+	@include flex-grow(1)
+	@include dark-button-input
 	font-family: 'Source Sans Pro'
 	font-size: 22px
+	text-align: center
+	padding: 5px 10px
+
+
+
+
