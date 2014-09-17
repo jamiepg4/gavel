@@ -28,6 +28,7 @@ header
 	text-align: center
 	color: #3A91B2
 	font-size: 12px
+	font-weight: 700
 	color: $bright-color-opacity
 
 section.main
@@ -37,6 +38,20 @@ section.main span
 	width: 100%
 	text-align: center
 	display: block
+	margin-bottom: 10px
+
+section.main span svg
+	position: relative
+	top: 3px
+	left: 6px
+
+section.main span svg #adjust-values
+	fill: #000000
+	opacity: 0.32
+
+section.main span svg:hover #adjust-values
+	fill: #ffffff
+	opacity: 0.90
 
 h1
 	margin: 0
@@ -46,39 +61,64 @@ h2
 	color: white
 
 div.buttons
-	margin: 1em auto
+	margin: 10px auto 30px auto
 	display: table
+	width: 210px
+
+.buttons select
+	@include dark-button
+	font-size: 16px
+	-webkit-appearance: none
 
 .commission
 	@include display-flex()
 	@include flex-direction(row)
-	box-sizing: border-box
-	padding: 10px 40px
+	padding: 0px
 	margin-left: 20px
 	margin-right: 20px
-	max-width: 400px
+	max-width: 280px
 	margin: 0 auto
 
 .commission div
 	@include flex-grow(1)
 	color: $bright-color
-	padding: 10px
-	// border: 1px solid white
+	padding: 5px 10px
+	margin: 0px
 	text-align: center
 	font-size: 24px
 	font-weight: 900
 
-.commission div:first-child
-	border-top-left-radius: 5px
-	border-bottom-left-radius: 5px
+.commission-graph
+	margin-bottom: 30px
 
-.commission div:last-child
-	border-bottom-right-radius: 5px
-	border-top-right-radius: 5px
+.commission-graph section
+	@include display-flex()
+	@include flex-direction(row)
+	padding: 0px
+	margin-left: 20px
+	margin-right: 20px
+	max-width: 280px
+	margin: 0 auto
 
-.buttons select
-	@include dark-button
-	-webkit-appearance: none
+.commission-graph svg
+	@include flex-grow(1)
+	padding: 0px
+	margin-left: 20px
+	margin-right: 20px
+	max-width: 280px
+	margin: 0 auto
+
+.commission-graph section div
+	@include flex-grow(1)
+	color: $dark-color-opacity
+	padding: 0px
+	margin: 0px
+	font-size: 12px
+	font-weight: 700
+	text-align: center
+
+.commission-graph section div:first-child
+	text-align: left
 
 section.main span
 	color: $dark-color-opacity
@@ -87,8 +127,23 @@ section.main span
 	display: block
 	text-align: center
 
-.inputs
-	width: 320px
+.inputs .text
+	@include display-flex()
+	@include flex-direction(row)
+	max-width: 280px
+	margin: 0 auto
+
+.inputs .text h2
+	@include flex-grow(1)
+	font-size: 15px
+	font-weight: 700
+	text-align: center
+	color: $dark-color-opacity
+
+.inputs .result
+	@include display-flex()
+	@include flex-direction(row)
+	max-width: 280px
 	margin: 0 auto
 
 input
