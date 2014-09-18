@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+var _ = require('underscore');
 
 window.jQuery = $;
 
@@ -19,13 +20,43 @@ $(function () {
 
     'use strict';
 
-    var Auction = Backbone.Model.extend();
+    var Place = Backbone.Model.extend();
 
-    var AuctionList = Backbone.Collection.extend({
-        model: Auction,
+    var PlaceList = Backbone.Collection.extend({
+        model: Place,
         url: 'auctions.json'
     });
 
+    var PlaceView = Backbone.View.extend({
+        tagName: 'option',
+        initialize: function () {
+            _.bindAll(this, 'render');
+        },
+        render: function () {
+            $(this.el).attr('value', 'VALUE');
+            return this;
+        }
+    });
+
+    var PlacesView = Backbone.View.extend({
+        initialize: function () {
+            _.bindAll(this, 'addOne', 'addAll');
+            console.log('initialise collection');
+            this.collection.bind('reset', this.addAll);
+        },
+        addOne: function(place){
+            console.log('add');
+          $(this.el).append(new PlaceView({ model: place }).render().el);
+        },
+        addAll: function(){
+          this.collection.each(this.addOne);
+        }
+    });
+
+    var places = new PlaceList();
+
+    new PlacesView({el: $('#place'), collection: places});
+    places.fetch();
 
     var AuctionView = Backbone.View.extend({
 
@@ -50,14 +81,10 @@ $(function () {
 
     });
 
-    var auctions = new AuctionList();
+    // var auctions = new AuctionList();
 
-    var auctionView = new AuctionView({el: $('#gavel'), model: auctions});
+    // var auctionView = new AuctionView({el: $('#gavel'), model: auctions});
 
-    auctions.fetch({reset: true});
 
-    auctions.bind('reset', function () {
-        console.log(auctions);
-    });
 
 });

@@ -1,42 +1,27 @@
-[
-	{
+[{
+	"Sotheby's": {
 		"name": "New York",
 		"rate": 10,
 		"currency": "$"
 	},
-	{
+	"Sotheby's Wine": {
 		"name": "London",
 		"rate": 40,
 		"currency": "£"
 	},
-	{
+	"Christie's": {
 		"name": "Paris",
 		"rate": 40,
 		"currency": "€"
 	},
-	{
+	"Christie's Wine": {
 		"name": "Milan",
 		"rate": 40,
 		"currency": "€"
 	},
-	{
+	"Phillips": {
 		"name": "Geneva",
 		"rate": 40,
 		"currency": "Fr"
-	},
-	{
-		"name": "Hong Kong",
-		"rate": 40,
-		"currency": "HK$"
-	},
-	{
-		"name": "Beijing",
-		"rate": 40,
-		"currency": "¥"
-	},
-	{
-		"name": "Amsterdam",
-		"rate": 40,
-		"currency": "€"
 	}
-]
+}]
