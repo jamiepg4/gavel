@@ -21,7 +21,11 @@ body
 header
 	width: 100%
 	color: white
-	margin-top: 40px
+	margin-top: 30px
+
+header svg
+	display: block
+	margin: 0 auto
 
 .strapline
 	display: block
@@ -38,7 +42,9 @@ section.main span
 	width: 100%
 	text-align: center
 	display: block
-	margin-bottom: 10px
+	color: $dark-color-opacity
+	font-weight: 700
+	font-size: 16px
 
 section.main span svg
 	position: relative
@@ -56,6 +62,9 @@ section.main span svg:hover #adjust-values
 h1
 	margin: 0
 	text-align: center
+	text-transform: uppercase
+	font-size: 24px
+	font-family: "Oswald", sans-serif
 
 h2
 	color: white
@@ -67,7 +76,8 @@ div.buttons
 
 .buttons select
 	@include dark-button
-	font-size: 16px
+	padding: 12px
+	font-size: 15px
 	-webkit-appearance: none
 
 .commission
@@ -120,13 +130,6 @@ div.buttons
 .commission-graph section div:first-child
 	text-align: left
 
-section.main span
-	color: $dark-color-opacity
-	font-weight: 700
-	font-size: 16px
-	display: block
-	text-align: center
-
 .inputs .text
 	@include display-flex()
 	@include flex-direction(row)
@@ -139,13 +142,33 @@ section.main span
 	font-weight: 700
 	text-align: center
 	color: $dark-color-opacity
+	margin: 0px 0px 5px 0px
 
 .inputs .result
 	@include display-flex()
 	@include flex-direction(row)
-	max-width: 280px
+	max-width: 260px
 	margin: 0 auto
+	padding: 6px
+	@include white-button
 
-input
+.inputs .result input
+	@include flex-grow(1)
+	@include dark-button-input
 	font-family: 'Source Sans Pro'
-	font-size: 22px
+	font-size: 19px
+	text-align: center
+	padding: 5px 10px
+	margin: 0px
+
+.inputs .result svg
+	@include flex-grow(1)
+	text-align: center
+	padding: 5px 10px
+
+footer svg
+	display: block
+	margin: 20px auto 0px auto
+
+
+
