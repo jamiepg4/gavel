@@ -18,8 +18,10 @@
 	border-radius: 5px;
 	text-align: center;
 	color: $bright-color;
-	background: rgba(23,15,15,0.35);
-	border: 1px solid rgba(20,20,20,0.15);
+	background: rgba(23,15,15,0.45);
+	border: 1px solid rgba(20,20,20,0.1);
+	-moz-box-shadow:    inset 0px 1px 1px 0px rgba(0,0,0,0.24);
+	box-shadow:         inset 0px 1px 1px 0px rgba(0,0,0,0.24);
 }
 
 @mixin white-button {
