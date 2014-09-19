@@ -19,8 +19,8 @@ var autoNumericOptions = {
 };
 
 var backgroundImage = Math.floor(Math.random() * 4) + 1;
-$('#background').css('background-image', 'url(images/' + backgroundImage + '-cropped.jpg)');
-$('#background-blur').css('background-image', 'url(images/' + backgroundImage + '-blurred.jpg)');
+$('#background').css('background-image', 'url(images/background_' + backgroundImage + '.png)');
+$('#background-blur').css('background-image', 'url(images/background_' + backgroundImage + '_blur.png)');
 
 $(function () {
 
