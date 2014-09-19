@@ -18,6 +18,9 @@ var autoNumericOptions = {
     'aPad': false
 };
 
+var backgroundImage = Math.floor(Math.random() * 4) + 1;
+$('#gavel').css('background-image', 'url(images/' + backgroundImage + '-blurred.jpg)');
+
 $(function () {
 
     'use strict';
