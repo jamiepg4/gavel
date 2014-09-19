@@ -1,27 +1,42 @@
-[{
-	"Sotheby's": {
+[
+	{
+		"id": 0,
 		"name": "New York",
-		"rate": 10,
-		"currency": "$"
+		"currency": "$",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12
 	},
-	"Sotheby's Wine": {
+	{
+		"id": 1,
 		"name": "London",
-		"rate": 40,
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
 		"currency": "£"
 	},
-	"Christie's": {
+	{
+		"id": 2,
 		"name": "Paris",
-		"rate": 40,
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
 		"currency": "€"
 	},
-	"Christie's Wine": {
+	{
+		"id": 3,
 		"name": "Milan",
-		"rate": 40,
+		"commissionOne": 30.5,
+		"commissionTwo": 24.4,
+		"commissionThree": 14.64,
 		"currency": "€"
 	},
-	"Phillips": {
+	{
+		"id": 4,
 		"name": "Geneva",
-		"rate": 40,
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
 		"currency": "Fr"
 	}
-}]
+]

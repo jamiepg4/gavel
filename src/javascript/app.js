@@ -13,7 +13,9 @@ var jQuery = $.noConflict();
 
 var autoNumericOptions = {
     'aDec': '.',
-    'aSign': '$'
+    'aSign': '$',
+    'wEmpty': 'sign',
+    'aPad': false
 };
 
 $(function () {
@@ -33,7 +35,7 @@ $(function () {
             _.bindAll(this, 'render');
         },
         render: function () {
-            $(this.el).attr('value', 'VALUE');
+            $(this.el).attr('value', this.model.get('id')).html(this.model.get('name'));
             return this;
         }
     });
@@ -41,22 +43,20 @@ $(function () {
     var PlacesView = Backbone.View.extend({
         initialize: function () {
             _.bindAll(this, 'addOne', 'addAll');
-            console.log('initialise collection');
             this.collection.bind('reset', this.addAll);
         },
         addOne: function(place){
-            console.log('add');
-          $(this.el).append(new PlaceView({ model: place }).render().el);
+            $(this.el).append(new PlaceView({ model: place }).render().el);
         },
         addAll: function(){
-          this.collection.each(this.addOne);
+            this.collection.each(this.addOne);
         }
     });
 
     var places = new PlaceList();
 
     new PlacesView({el: $('#place'), collection: places});
-    places.fetch();
+    places.fetch({reset: true});
 
     var AuctionView = Backbone.View.extend({
 
@@ -65,12 +65,32 @@ $(function () {
             'click #button': 'clickButton',
             'change input#hammer': 'updateValue',
             'change input#value': 'updateValue',
-            'keypress': 'updateValue'
+            'keypress': 'updateValue',
+            'change .switcher': 'selectPlace'
         },
 
         initialize: function () {
             $('#hammer').autoNumeric('init', autoNumericOptions);
             $('#value').autoNumeric('init', autoNumericOptions);
+        },
+
+        selectPlace: function (s) {
+            $('#commission-1').html('5');
+
+            var selectedPlace = places.find(function (i) {
+                return i.get('id') == $('#place').val();
+            });
+
+            $('#commission-1').html(selectedPlace.get('commissionOne'));
+            $('#commission-2').html(selectedPlace.get('commissionTwo'));
+            $('#commission-3').html(selectedPlace.get('commissionThree'));
+
+            autoNumericOptions.aSign = selectedPlace.get('currency');
+
+            $('#hammer').autoNumeric('update', autoNumericOptions);
+            $('#value').autoNumeric('update', autoNumericOptions);
+
+            console.log(selectedPlace);
         },
 
         updateValue: function () {
@@ -83,8 +103,6 @@ $(function () {
 
     // var auctions = new AuctionList();
 
-    // var auctionView = new AuctionView({el: $('#gavel'), model: auctions});
-
-
+    var auctionView = new AuctionView({el: $('#gavel')});
 
 });
