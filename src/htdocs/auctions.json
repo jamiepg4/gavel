@@ -1,7 +1,7 @@
 [
 	{
 		"id": 0,
-		"name": "New York",
+		"name": "Sotheby's New York",
 		"currency": "$",
 		"commissionOne": 25,
 		"commissionTwo": 20,
@@ -9,7 +9,7 @@
 	},
 	{
 		"id": 1,
-		"name": "London",
+		"name": "Sotheby's London",
 		"commissionOne": 25,
 		"commissionTwo": 20,
 		"commissionThree": 12,
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": 2,
-		"name": "Paris",
+		"name": "Sotheby's Paris",
 		"commissionOne": 25,
 		"commissionTwo": 20,
 		"commissionThree": 12,
@@ -25,7 +25,7 @@
 	},
 	{
 		"id": 3,
-		"name": "Milan",
+		"name": "Sotheby's Milan",
 		"commissionOne": 30.5,
 		"commissionTwo": 24.4,
 		"commissionThree": 14.64,
@@ -33,10 +33,186 @@
 	},
 	{
 		"id": 4,
-		"name": "Geneva",
+		"name": "Sotheby's Geneva",
 		"commissionOne": 25,
 		"commissionTwo": 20,
 		"commissionThree": 12,
 		"currency": "Fr"
+	},
+	{
+		"id": 5,
+		"name": "Sotheby's Hong Kong",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 6,
+		"name": "Sotheby's Beijing",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 7,
+		"name": "Sotheby's wine New York",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 8,
+		"name": "Sotheby's London",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 9,
+		"name": "Sotheby's Hong Kong",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 10,
+		"name": "Christie's New York",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 11,
+		"name": "Christie's London",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 12,
+		"name": "Christie's Paris",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "€"
+	},
+	{
+		"id": 13,
+		"name": "Christie's Amsterdam",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "€"
+	},
+	{
+		"id": 14,
+		"name": "Christie's Milan",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "€"
+	},
+	{
+		"id": 15,
+		"name": "Christie's Geneva",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 16,
+		"name": "Christie's Zurich",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 17,
+		"name": "Christie's Hong Kong",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 18,
+		"name": "Christie's Dubai",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 19,
+		"name": "Christie's Mumbai",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 20,
+		"name": "Christie's wine New York",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 21,
+		"name": "Christie's wine London",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 22,
+		"name": "Christie's wine Hong Kong",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "Fr"
+	},
+	{
+		"id": 23,
+		"name": "Christie's wine Paris",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "€"
+	},
+	{
+		"id": 24,
+		"name": "Christie's wine Geneva",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "€"
+	},
+	{
+		"id": 25,
+		"name": "Phillips New York",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "$"
+	},
+	{
+		"id": 26,
+		"name": "Phillips London",
+		"commissionOne": 25,
+		"commissionTwo": 20,
+		"commissionThree": 12,
+		"currency": "£"
 	}
 ]

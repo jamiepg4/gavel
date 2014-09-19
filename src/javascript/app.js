@@ -19,7 +19,8 @@ var autoNumericOptions = {
 };
 
 var backgroundImage = Math.floor(Math.random() * 4) + 1;
-$('#gavel').css('background-image', 'url(images/' + backgroundImage + '-blurred.jpg)');
+$('#background').css('background-image', 'url(images/' + backgroundImage + '-cropped.jpg)');
+$('#background-blur').css('background-image', 'url(images/' + backgroundImage + '-blurred.jpg)');
 
 $(function () {
 
@@ -92,6 +93,8 @@ $(function () {
 
             $('#hammer').autoNumeric('update', autoNumericOptions);
             $('#value').autoNumeric('update', autoNumericOptions);
+
+            $('#background').fadeOut();
 
             console.log(selectedPlace);
         },
