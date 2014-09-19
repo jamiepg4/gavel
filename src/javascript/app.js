@@ -95,6 +95,7 @@ $(function () {
             $('#value').autoNumeric('update', autoNumericOptions);
 
             $('#background').fadeOut();
+            $('section.main').css('visibility', 'visible');
 
             console.log(selectedPlace);
         },
