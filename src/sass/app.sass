@@ -3,7 +3,6 @@
 @import variables
 @import typography
 
-
 html
 	height: 100%
 
@@ -16,6 +15,35 @@ body
 	background-position: center top
 	@include display-flex()
 	@include flex-direction(column)
+
+#gavel
+	height: 600px
+	width: 300px
+	margin: 0 auto
+	z-index: 3
+
+#background
+	display: block
+	position: absolute
+	width: 300px
+	height: 600px
+	margin-left: auto
+	margin-right: auto
+	left: 0
+	right: 0
+	z-index: 2
+
+#background-blur
+	display: block
+	position: absolute
+	width: 300px
+	height: 600px
+	position: absolute
+	margin-left: auto
+	margin-right: auto
+	left: 0
+	right: 0
+	z-index: 1
 
 header
 	width: 100%
