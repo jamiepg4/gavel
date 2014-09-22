@@ -78,6 +78,17 @@ $(function () {
             $('#value').autoNumeric('init', autoNumericOptions);
         },
 
+        formatCurrency: function (x) {
+
+            var selectedPlace = places.find(function (i) {
+                return i.get('id') == $('#place').val();
+            });
+
+            var currency = selectedPlace.get('currency');
+
+            return currency + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+
         selectPlace: function (s) {
             $('#commission-1').html('5');
 
@@ -85,9 +96,12 @@ $(function () {
                 return i.get('id') == $('#place').val();
             });
 
-            $('#commission-1').html(selectedPlace.get('commissionOne'));
-            $('#commission-2').html(selectedPlace.get('commissionTwo'));
-            $('#commission-3').html(selectedPlace.get('commissionThree'));
+            $('#commission-1').html(selectedPlace.get('commissionOne') + '%');
+            $('#commission-2').html(selectedPlace.get('commissionTwo') + '%');
+            $('#commission-3').html(selectedPlace.get('commissionThree') + '%');
+
+            $('#commission-one-amount').html(this.formatCurrency(selectedPlace.get('commissionOneAmount')));
+            $('#commission-two-amount').html(this.formatCurrency(selectedPlace.get('commissionTwoAmount')));
 
             autoNumericOptions.aSign = selectedPlace.get('currency');
 
@@ -97,18 +111,65 @@ $(function () {
             $('#background').fadeOut();
             $('section.main').css('visibility', 'visible');
 
-            console.log(selectedPlace);
+            this.updateValue();
+
         },
 
         updateValue: function () {
-            var initial = parseInt($('#hammer').autoNumeric('get'), 10);
+            var taxablePrice = parseInt($('#hammer').autoNumeric('get'), 10);
 
-            $('#value').autoNumeric('set', initial * 2);
+            var selectedPlace = places.find(function (i) {
+                return i.get('id') == $('#place').val();
+            });
+
+            var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
+            var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
+
+            var secondBandPercentage = parseInt(selectedPlace.get('commissionTwo'), 10) / 100;
+            var secondBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
+
+            var thirdBandPercentage = parseInt(selectedPlace.get('commissionThree'), 10) / 100;
+            var thirdBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
+
+            var firstBandTaxLiability = 0;
+            var secondBandTaxLiability = 0;
+            var thirdBandTaxLiability = 0;
+
+            // CALCULATE FIRST BAND LIABILITY
+            if (taxablePrice > 0) {
+              if (taxablePrice > firstBandThreshold) {
+                firstBandTaxLiability = firstBandThreshold * firstBandPercentage;
+              } else {
+                firstBandTaxLiability = taxablePrice * firstBandPercentage;
+              }
+            }
+
+            // CALCULATE SECOND BAND LIABILITY
+            if (taxablePrice > firstBandThreshold) {
+              if (taxablePrice > secondBandThreshold) {
+                secondBandTaxLiability = secondBandPercentage * secondBandThreshold;
+              } else {
+                secondBandTaxLiability = (taxablePrice - firstBandThreshold) * secondBandPercentage;
+              }
+            }
+
+            // CALCULATE FOURTH BAND LIABILITY
+            if (taxablePrice > thirdBandThreshold) {
+              thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
+            }
+
+            // debugger;
+
+            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
+            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
+            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
+
+            var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
+            $('#value').autoNumeric('set', totalPrice);
+
         }
 
     });
-
-    // var auctions = new AuctionList();
 
     var auctionView = new AuctionView({el: $('#gavel')});
 
