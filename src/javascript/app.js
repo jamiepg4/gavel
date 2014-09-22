@@ -68,14 +68,28 @@ $(function () {
         events: {
             'click #button': 'clickButton',
             'change input#hammer': 'updateValue',
-            'change input#value': 'updateValue',
+            'change input#value': 'updateReverseValue',
             'keypress': 'updateValue',
-            'change .switcher': 'selectPlace'
+            'change .switcher': 'selectPlace',
+            'click .widget': 'showEmbed',
+            'click .return': 'hideEmbed'
         },
 
         initialize: function () {
             $('#hammer').autoNumeric('init', autoNumericOptions);
             $('#value').autoNumeric('init', autoNumericOptions);
+        },
+
+        hideEmbed: function () {
+            $('.main').show();
+            $('.button').show();
+            $('.widget-text').hide();
+        },
+
+        showEmbed: function () {
+            $('.main').hide();
+            $('.button').hide();
+            $('.widget-text').show();
         },
 
         formatCurrency: function (x) {
@@ -166,7 +180,7 @@ $(function () {
         },
 
         updateReverseValue: function () {
-            var taxablePrice = parseInt($('#value').autoNumeric('get'), 10);
+            var totalIncludingTax = parseInt($('#value').autoNumeric('get'), 10);
 
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
@@ -185,32 +199,28 @@ $(function () {
             var secondBandTaxLiability = 0;
             var thirdBandTaxLiability = 0;
 
-            if (taxablePrice > 0) {
-              if (taxablePrice > firstBandThreshold) {
-                firstBandTaxLiability = firstBandThreshold * firstBandPercentage;
-              } else {
-                firstBandTaxLiability = taxablePrice * firstBandPercentage;
-              }
+            if (totalIncludingTax > firstBandThreshold) {
+                firstBandTaxLiability = (firstBandThreshold * firstBandPercentage);
+            } else {
+                firstBandTaxLiability = totalIncludingTax * firstBandPercentage;
             }
 
-            if (taxablePrice > firstBandThreshold) {
-              if (taxablePrice > secondBandThreshold) {
-                secondBandTaxLiability = secondBandPercentage * secondBandThreshold;
-              } else {
-                secondBandTaxLiability = (taxablePrice - firstBandThreshold) * secondBandPercentage;
-              }
-            }
 
-            if (taxablePrice > thirdBandThreshold) {
-              thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
-            }
+            // if (totalIncludingTax - firstBandTaxLiability >)
 
-            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
-            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
-            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
 
-            var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
-            $('#value').autoNumeric('set', totalPrice);
+            var totalLessFirstBand = totalIncludingTax - (firstBandThreshold * firstBandPercentage);
+            var totalLessSecondBand = totalLessFirstBand - ((secondBandThreshold - firstBandThreshold) * secondBandPercentage);
+
+            var totalThirdBand = (totalLessSecondBand - secondBandThreshold) / (1 + thirdBandPercentage);
+
+            thirdBandTaxLiability = (totalThirdBand * thirdBandPercentage);
+
+            var originalPrice = totalIncludingTax - (firstBandTaxLiability - secondBandTaxLiability - thirdBandTaxLiability);
+
+            // debugger;
+
+            $('#hammer').autoNumeric('set', totalThirdBand + secondBandThreshold);
 
         }
 
