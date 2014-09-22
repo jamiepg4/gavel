@@ -100,6 +100,7 @@ $(function () {
             $('#commission-2').html(selectedPlace.get('commissionTwo') + '%');
             $('#commission-3').html(selectedPlace.get('commissionThree') + '%');
 
+            $('#commission-base').html(this.formatCurrency(0));
             $('#commission-one-amount').html(this.formatCurrency(selectedPlace.get('commissionOneAmount')));
             $('#commission-two-amount').html(this.formatCurrency(selectedPlace.get('commissionTwoAmount')));
 
@@ -155,9 +156,9 @@ $(function () {
               thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
             }
 
-            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
-            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
-            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
+            // console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
+            // console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
+            // console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
 
             var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
             $('#value').autoNumeric('set', totalPrice);
