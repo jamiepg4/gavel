@@ -4,14 +4,18 @@
 		"name": "Sotheby's New York",
 		"currency": "$",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12
 	},
 	{
 		"id": 1,
 		"name": "Sotheby's London",
 		"commissionOne": 25,
+		"commissionOneAmount": 50000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
 		"currency": "£"
 	},
@@ -19,7 +23,9 @@
 		"id": 2,
 		"name": "Sotheby's Paris",
 		"commissionOne": 25,
+		"commissionOneAmount": 30000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1200000,
 		"commissionThree": 12,
 		"currency": "€"
 	},
@@ -27,7 +33,9 @@
 		"id": 3,
 		"name": "Sotheby's Milan",
 		"commissionOne": 30.5,
+		"commissionOneAmount": 30000,
 		"commissionTwo": 24.4,
+		"commissionTwoAmount": 30000,
 		"commissionThree": 14.64,
 		"currency": "€"
 	},
@@ -35,7 +43,9 @@
 		"id": 4,
 		"name": "Sotheby's Geneva",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
 		"currency": "Fr"
 	},
@@ -43,39 +53,49 @@
 		"id": 5,
 		"name": "Sotheby's Hong Kong",
 		"commissionOne": 25,
+		"commissionOneAmount": 800000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 15000000,
 		"commissionThree": 12,
 		"currency": "Fr"
 	},
 	{
 		"id": 6,
 		"name": "Sotheby's Beijing",
-		"commissionOne": 25,
-		"commissionTwo": 20,
+		"commissionOne": 0,
+		"commissionOneAmount": 0,
+		"commissionTwo": 0,
+		"commissionTwoAmount": 0,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "Rmb"
 	},
 	{
 		"id": 7,
-		"name": "Sotheby's wine New York",
+		"name": "Sotheby's Wine New York",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "$"
 	},
 	{
 		"id": 8,
 		"name": "Sotheby's London",
 		"commissionOne": 25,
+		"commissionOneAmount": 50000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "£"
 	},
 	{
 		"id": 9,
 		"name": "Sotheby's Hong Kong",
 		"commissionOne": 25,
+		"commissionOneAmount": 0,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 0,
 		"commissionThree": 12,
 		"currency": "Fr"
 	},
@@ -83,119 +103,149 @@
 		"id": 10,
 		"name": "Christie's New York",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "$"
 	},
 	{
 		"id": 11,
 		"name": "Christie's London",
 		"commissionOne": 25,
+		"commissionOneAmount": 50000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "£"
 	},
 	{
 		"id": 12,
 		"name": "Christie's Paris",
 		"commissionOne": 25,
+		"commissionOneAmount": 30000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1200000,
 		"commissionThree": 12,
 		"currency": "€"
 	},
 	{
 		"id": 13,
 		"name": "Christie's Amsterdam",
-		"commissionOne": 25,
-		"commissionTwo": 20,
-		"commissionThree": 12,
+		"commissionOne": 30.25,
+		"commissionOneAmount": 30000,
+		"commissionTwo": 24.2,
+		"commissionTwoAmount": 1200000,
+		"commissionThree": 14.52,
 		"currency": "€"
 	},
 	{
 		"id": 14,
 		"name": "Christie's Milan",
-		"commissionOne": 25,
-		"commissionTwo": 20,
-		"commissionThree": 12,
+		"commissionOne": 30,
+		"commissionOneAmount": 30000,
+		"commissionTwo": 26,
+		"commissionTwoAmount": 30000,
+		"commissionThree": 18.5,
 		"currency": "€"
 	},
 	{
 		"id": 15,
 		"name": "Christie's Geneva",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "SwFr"
 	},
 	{
 		"id": 16,
 		"name": "Christie's Zurich",
-		"commissionOne": 25,
-		"commissionTwo": 20,
-		"commissionThree": 12,
-		"currency": "Fr"
+		"commissionOne": 0,
+		"commissionOneAmount": 0,
+		"commissionTwo": 0,
+		"commissionTwoAmount": 0,
+		"commissionThree": 20,
+		"currency": "SwFr"
 	},
 	{
 		"id": 17,
 		"name": "Christie's Hong Kong",
 		"commissionOne": 25,
+		"commissionOneAmount": 800000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 15000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "HK$"
 	},
 	{
 		"id": 18,
 		"name": "Christie's Dubai",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "$"
 	},
 	{
 		"id": 19,
 		"name": "Christie's Mumbai",
 		"commissionOne": 25,
+		"commissionOneAmount": 4500000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 90000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "InR"
 	},
 	{
 		"id": 20,
-		"name": "Christie's wine New York",
-		"commissionOne": 25,
-		"commissionTwo": 20,
-		"commissionThree": 12,
-		"currency": "Fr"
+		"name": "Christie's Wine New York",
+		"commissionOne": 0,
+		"commissionOneAmount": 0,
+		"commissionTwo": 0,
+		"commissionTwoAmount": 0,
+		"commissionThree": 22.5,
+		"currency": "$"
 	},
 	{
 		"id": 21,
-		"name": "Christie's wine London",
-		"commissionOne": 25,
-		"commissionTwo": 20,
-		"commissionThree": 12,
-		"currency": "Fr"
+		"name": "Christie's Wine London",
+		"commissionOne": 0,
+		"commissionOneAmount": 0,
+		"commissionTwo": 0,
+		"commissionTwoAmount": 0,
+		"commissionThree": 17.5,
+		"currency": "£"
 	},
 	{
 		"id": 22,
-		"name": "Christie's wine Hong Kong",
+		"name": "Christie's Wine Hong Kong",
 		"commissionOne": 25,
+		"commissionOneAmount": 0,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 0,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "HK$"
 	},
 	{
 		"id": 23,
-		"name": "Christie's wine Paris",
+		"name": "Christie's Wine Paris",
 		"commissionOne": 25,
+		"commissionOneAmount": 0,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 0,
 		"commissionThree": 12,
 		"currency": "€"
 	},
 	{
 		"id": 24,
-		"name": "Christie's wine Geneva",
+		"name": "Christie's Wine Geneva",
 		"commissionOne": 25,
+		"commissionOneAmount": 0,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 0,
 		"commissionThree": 12,
 		"currency": "€"
 	},
@@ -203,7 +253,9 @@
 		"id": 25,
 		"name": "Phillips New York",
 		"commissionOne": 25,
+		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
 		"currency": "$"
 	},
@@ -211,7 +263,9 @@
 		"id": 26,
 		"name": "Phillips London",
 		"commissionOne": 25,
+		"commissionOneAmount": 50000,
 		"commissionTwo": 20,
+		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
 		"currency": "£"
 	}
