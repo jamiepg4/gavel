@@ -36,9 +36,8 @@
 
 @mixin white-button-black-text {
 	border-radius: 5px;
-	width: 100%;
 	color: $dark-color;
-	background: rgba(244,243,235,0.9);
+	background: rgba(244,243,235,0.8);
 	border: 1px solid rgba(20,20,20,0.15);
 	moz-box-shadow:    0px 1px 2px 0px rgba(0,0,0,0.14), inset 0px 1px 0px 0px rgba(255,255,255,0.20);
 	box-shadow:         0px 1px 2px 0px rgba(0,0,0,0.14), inset 0px 1px 0px 0px rgba(255,255,255,0.20);

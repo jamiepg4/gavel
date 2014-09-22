@@ -103,11 +103,18 @@ div.buttons
 
 .buttons select
 	@include white-button-black-text
+	max-width: 210px
 	text-align: center
 	padding: 12px
 	font-size: 15px
 	font-weight: 700
 	-webkit-appearance: none
+
+.buttons select:hover
+	background: rgba(244,243,235,1)
+
+.buttons select:focus
+	outline: none
 
 .commission
 	@include display-flex()
@@ -209,6 +216,52 @@ div.buttons
 	@include flex-grow(1)
 	text-align: center
 	padding: 5px 10px
+
+.widget
+	margin-top: 10px
+	font-size: 12px
+	font-weight: 700
+	text-align: center
+	text-transform: uppercase
+	color: $dark-color-opacity
+	cursor: pointer
+
+.widget:hover
+	color: $bright-color-opacity
+
+.widget-text
+	max-width: 256px
+	margin: 40px auto 0 auto
+
+.widget-text h2
+	font-size: 15px
+	text-align: center
+	color: $bright-color-opacity
+
+.widget-text input
+	width: 100%
+	@include dark-button-input
+
+.widget-text input:focus
+	outline: none
+	background: rgba(23,15,15,0.65)
+
+.widget-text button
+	display: table
+	max-width: 80%
+	margin: 20px auto 0 auto
+	@include white-button-black-text
+	text-align: center
+	padding: 12px
+	font-size: 15px
+	font-weight: 700
+	-webkit-appearance: none
+
+.widget-text button:hover
+	background: rgba(244,243,235,1)
+
+.widget-text button:focus
+	outline: none
 
 footer svg
 	display: block
