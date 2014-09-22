@@ -9,7 +9,6 @@ html
 body
 	margin: 0
 	padding: 0
-	height: 100%
 	overflow-x: hidden
 	background-repeat: no-repeat
 	background-position: center top
@@ -239,11 +238,16 @@ div.buttons
 	color: $bright-color-opacity
 
 
-.widget-text input
+.widget-text textarea
 	width: 100%
 	@include dark-button-input
+	resize: none
+	height: 60px
+	font-size: 12px
+	line-height: 18px
+	padding-top: 10px
 
-.widget-text input:focus
+.widget-text textarea:focus
 	outline: none
 	background: rgba(23,15,15,0.65)
 
@@ -263,6 +267,12 @@ div.buttons
 
 .widget-text button:focus
 	outline: none
+
+footer
+	width: 300px
+	position: absolute
+	bottom: 30px
+	height: 30px
 
 footer svg
 	display: block
