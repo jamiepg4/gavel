@@ -57,7 +57,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 15000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "HK$"
 	},
 	{
 		"id": 6,
@@ -97,7 +97,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 0,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "HK$"
 	},
 	{
 		"id": 10,

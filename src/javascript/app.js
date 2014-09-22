@@ -135,7 +135,6 @@ $(function () {
             var secondBandTaxLiability = 0;
             var thirdBandTaxLiability = 0;
 
-            // CALCULATE FIRST BAND LIABILITY
             if (taxablePrice > 0) {
               if (taxablePrice > firstBandThreshold) {
                 firstBandTaxLiability = firstBandThreshold * firstBandPercentage;
@@ -144,7 +143,55 @@ $(function () {
               }
             }
 
-            // CALCULATE SECOND BAND LIABILITY
+            if (taxablePrice > firstBandThreshold) {
+              if (taxablePrice > secondBandThreshold) {
+                secondBandTaxLiability = secondBandPercentage * (secondBandThreshold - firstBandThreshold);
+              } else {
+                secondBandTaxLiability = (taxablePrice - firstBandThreshold) * secondBandPercentage;
+              }
+            }
+
+            if (taxablePrice > thirdBandThreshold) {
+              thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
+            }
+
+            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
+            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
+            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
+
+            var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
+            $('#value').autoNumeric('set', totalPrice);
+
+        },
+
+        updateReverseValue: function () {
+            var taxablePrice = parseInt($('#value').autoNumeric('get'), 10);
+
+            var selectedPlace = places.find(function (i) {
+                return i.get('id') == $('#place').val();
+            });
+
+            var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
+            var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
+
+            var secondBandPercentage = parseInt(selectedPlace.get('commissionTwo'), 10) / 100;
+            var secondBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
+
+            var thirdBandPercentage = parseInt(selectedPlace.get('commissionThree'), 10) / 100;
+            var thirdBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
+
+            var firstBandTaxLiability = 0;
+            var secondBandTaxLiability = 0;
+            var thirdBandTaxLiability = 0;
+
+            if (taxablePrice > 0) {
+              if (taxablePrice > firstBandThreshold) {
+                firstBandTaxLiability = firstBandThreshold * firstBandPercentage;
+              } else {
+                firstBandTaxLiability = taxablePrice * firstBandPercentage;
+              }
+            }
+
             if (taxablePrice > firstBandThreshold) {
               if (taxablePrice > secondBandThreshold) {
                 secondBandTaxLiability = secondBandPercentage * secondBandThreshold;
@@ -153,12 +200,9 @@ $(function () {
               }
             }
 
-            // CALCULATE FOURTH BAND LIABILITY
             if (taxablePrice > thirdBandThreshold) {
               thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
             }
-
-            // debugger;
 
             console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
             console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
