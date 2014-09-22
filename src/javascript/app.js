@@ -82,13 +82,13 @@ $(function () {
 
         hideEmbed: function () {
             $('.main').show();
-            $('.button').show();
+            $('.buttons').show();
             $('.widget-text').hide();
         },
 
         showEmbed: function () {
             $('.main').hide();
-            $('.button').hide();
+            $('.buttons').hide();
             $('.widget-text').show();
         },
 
