@@ -7,7 +7,8 @@
 		"commissionOneAmount": 100000,
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
-		"commissionThree": 12
+		"commissionThree": 12,
+		"flatRate": false
 	},
 	{
 		"id": 1,
@@ -17,7 +18,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
-		"currency": "£"
+		"currency": "£",
+		"flatRate": false
 	},
 	{
 		"id": 2,
@@ -27,7 +29,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 1200000,
 		"commissionThree": 12,
-		"currency": "€"
+		"currency": "€",
+		"flatRate": false
 	},
 	{
 		"id": 3,
@@ -37,7 +40,8 @@
 		"commissionTwo": 24.4,
 		"commissionTwoAmount": 30000,
 		"commissionThree": 14.64,
-		"currency": "€"
+		"currency": "€",
+		"flatRate": false
 	},
 	{
 		"id": 4,
@@ -47,7 +51,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "Fr"
+		"currency": "Fr",
+		"flatRate": false
 	},
 	{
 		"id": 5,
@@ -57,47 +62,52 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 15000000,
 		"commissionThree": 12,
-		"currency": "HK$"
+		"currency": "HK$",
+		"flatRate": false
 	},
 	{
 		"id": 6,
 		"name": "Sotheby's Beijing",
-		"commissionOne": 0,
+		"commissionOne": 18,
 		"commissionOneAmount": 0,
-		"commissionTwo": 0,
+		"commissionTwo": 18,
 		"commissionTwoAmount": 0,
-		"commissionThree": 12,
-		"currency": "Rmb"
+		"commissionThree": 18,
+		"currency": "Rmb",
+		"flatRate": true
 	},
 	{
 		"id": 7,
 		"name": "Sotheby's Wine New York",
-		"commissionOne": 25,
-		"commissionOneAmount": 100000,
-		"commissionTwo": 20,
-		"commissionTwoAmount": 2000000,
-		"commissionThree": 12,
-		"currency": "$"
+		"commissionOne": 22.5,
+		"commissionOneAmount": 0,
+		"commissionTwo": 22.5,
+		"commissionTwoAmount": 0,
+		"commissionThree": 22.5,
+		"currency": "$",
+		"flatRate": true
 	},
 	{
 		"id": 8,
-		"name": "Sotheby's London",
-		"commissionOne": 25,
-		"commissionOneAmount": 50000,
-		"commissionTwo": 20,
-		"commissionTwoAmount": 1000000,
-		"commissionThree": 12,
-		"currency": "£"
+		"name": "Sotheby's Wine London",
+		"commissionOne": 17.5,
+		"commissionOneAmount": 0,
+		"commissionTwo": 17.5,
+		"commissionTwoAmount": 0,
+		"commissionThree": 17.5,
+		"currency": "£",
+		"flatRate": true
 	},
 	{
 		"id": 9,
-		"name": "Sotheby's Hong Kong",
-		"commissionOne": 25,
+		"name": "Sotheby's Wine Hong Kong",
+		"commissionOne": 22.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 20,
+		"commissionTwo": 22.5,
 		"commissionTwoAmount": 0,
-		"commissionThree": 12,
-		"currency": "HK$"
+		"commissionThree": 22.5,
+		"currency": "HK$",
+		"flatRate": true
 	},
 	{
 		"id": 10,
@@ -107,7 +117,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "$"
+		"currency": "$",
+		"flatRate": false
 	},
 	{
 		"id": 11,
@@ -117,7 +128,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
-		"currency": "£"
+		"currency": "£",
+		"flatRate": false
 	},
 	{
 		"id": 12,
@@ -127,7 +139,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 1200000,
 		"commissionThree": 12,
-		"currency": "€"
+		"currency": "€",
+		"flatRate": false
 	},
 	{
 		"id": 13,
@@ -137,7 +150,8 @@
 		"commissionTwo": 24.2,
 		"commissionTwoAmount": 1200000,
 		"commissionThree": 14.52,
-		"currency": "€"
+		"currency": "€",
+		"flatRate": false
 	},
 	{
 		"id": 14,
@@ -147,7 +161,8 @@
 		"commissionTwo": 26,
 		"commissionTwoAmount": 30000,
 		"commissionThree": 18.5,
-		"currency": "€"
+		"currency": "€",
+		"flatRate": false
 	},
 	{
 		"id": 15,
@@ -157,17 +172,19 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "SwFr"
+		"currency": "SwFr",
+		"flatRate": false
 	},
 	{
 		"id": 16,
 		"name": "Christie's Zurich",
-		"commissionOne": 0,
+		"commissionOne": 20,
 		"commissionOneAmount": 0,
-		"commissionTwo": 0,
+		"commissionTwo": 20,
 		"commissionTwoAmount": 0,
 		"commissionThree": 20,
-		"currency": "SwFr"
+		"currency": "SwFr",
+		"flatRate": true
 	},
 	{
 		"id": 17,
@@ -177,7 +194,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 15000000,
 		"commissionThree": 12,
-		"currency": "HK$"
+		"currency": "HK$",
+		"flatRate": false
 	},
 	{
 		"id": 18,
@@ -187,7 +205,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "$"
+		"currency": "$",
+		"flatRate": false
 	},
 	{
 		"id": 19,
@@ -197,7 +216,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 90000000,
 		"commissionThree": 12,
-		"currency": "InR"
+		"currency": "InR",
+		"flatRate": false
 	},
 	{
 		"id": 20,
@@ -207,47 +227,52 @@
 		"commissionTwo": 22.5,
 		"commissionTwoAmount": 0,
 		"commissionThree": 22.5,
-		"currency": "$"
+		"currency": "$",
+		"flatRate": true
 	},
 	{
 		"id": 21,
 		"name": "Christie's Wine London",
-		"commissionOne": 0,
+		"commissionOne": 17.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 0,
+		"commissionTwo": 17.5,
 		"commissionTwoAmount": 0,
 		"commissionThree": 17.5,
-		"currency": "£"
+		"currency": "£",
+		"flatRate": true
 	},
 	{
 		"id": 22,
 		"name": "Christie's Wine Hong Kong",
-		"commissionOne": 25,
+		"commissionOne": 22.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 20,
+		"commissionTwo": 22.5,
 		"commissionTwoAmount": 0,
-		"commissionThree": 12,
-		"currency": "HK$"
+		"commissionThree": 22.5,
+		"currency": "HK$",
+		"flatRate": true
 	},
 	{
 		"id": 23,
 		"name": "Christie's Wine Paris",
-		"commissionOne": 25,
+		"commissionOne": 17.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 20,
+		"commissionTwo": 17.5,
 		"commissionTwoAmount": 0,
-		"commissionThree": 12,
-		"currency": "€"
+		"commissionThree": 17.5,
+		"currency": "€",
+		"flatRate": true
 	},
 	{
 		"id": 24,
 		"name": "Christie's Wine Geneva",
-		"commissionOne": 25,
+		"commissionOne": 17.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 20,
+		"commissionTwo": 17.5,
 		"commissionTwoAmount": 0,
-		"commissionThree": 12,
-		"currency": "€"
+		"commissionThree": 17.5,
+		"currency": "€",
+		"flatRate": true
 	},
 	{
 		"id": 25,
@@ -257,7 +282,8 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "$"
+		"currency": "$",
+		"flatRate": false
 	},
 	{
 		"id": 26,
@@ -267,6 +293,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 1000000,
 		"commissionThree": 12,
-		"currency": "£"
+		"currency": "£",
+		"flatRate": false
 	}
 ]
