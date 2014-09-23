@@ -69,7 +69,7 @@ $(function () {
             'click #button': 'clickButton',
             'change input#hammer': 'updateValue',
             'change input#value': 'updateReverseValue',
-            'keydown': 'updateValue',
+            // 'keydown': 'updateValue',
             'change .switcher': 'selectPlace',
             'click .widget': 'showEmbed',
             'click .return': 'hideEmbed'
@@ -180,10 +180,6 @@ $(function () {
               thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
             }
 
-            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
-            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
-            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
-
             var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
             $('#value').autoNumeric('set', totalPrice);
 
@@ -195,6 +191,11 @@ $(function () {
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
             });
+
+            if (selectedPlace.get('flatRate')) {
+                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                return;
+            }
 
             var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
