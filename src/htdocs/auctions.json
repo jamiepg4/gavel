@@ -38,7 +38,7 @@
 		"commissionOne": 30.5,
 		"commissionOneAmount": 30000,
 		"commissionTwo": 24.4,
-		"commissionTwoAmount": 30000,
+		"commissionTwoAmount": 1200000,
 		"commissionThree": 14.64,
 		"currency": "€",
 		"flatRate": false
@@ -159,7 +159,7 @@
 		"commissionOne": 30,
 		"commissionOneAmount": 30000,
 		"commissionTwo": 26,
-		"commissionTwoAmount": 30000,
+		"commissionTwoAmount": 1200000,
 		"commissionThree": 18.5,
 		"currency": "€",
 		"flatRate": false
