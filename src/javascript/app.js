@@ -192,11 +192,6 @@ $(function () {
                 return i.get('id') == $('#place').val();
             });
 
-            if (selectedPlace.get('flatRate')) {
-                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
-                return;
-            }
-
             var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
 
@@ -210,28 +205,16 @@ $(function () {
             var secondBandTaxLiability = 0;
             var thirdBandTaxLiability = 0;
 
-            if (totalIncludingTax > firstBandThreshold) {
-                firstBandTaxLiability = (firstBandThreshold * firstBandPercentage);
-            } else {
-                firstBandTaxLiability = totalIncludingTax * firstBandPercentage;
+            // Flat rate reverse calculation
+            if (selectedPlace.get('flatRate')) {
+                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                return;
             }
 
-
-            // if (totalIncludingTax - firstBandTaxLiability >)
-
-
-            var totalLessFirstBand = totalIncludingTax - (firstBandThreshold * firstBandPercentage);
-            var totalLessSecondBand = totalLessFirstBand - ((secondBandThreshold - firstBandThreshold) * secondBandPercentage);
-
-            var totalThirdBand = (totalLessSecondBand - secondBandThreshold) / (1 + thirdBandPercentage);
-
-            thirdBandTaxLiability = (totalThirdBand * thirdBandPercentage);
-
-            var originalPrice = totalIncludingTax - (firstBandTaxLiability - secondBandTaxLiability - thirdBandTaxLiability);
-
-            // debugger;
-
-            $('#hammer').autoNumeric('set', totalThirdBand + secondBandThreshold);
+            if (totalIncludingTax <= (firstBandThreshold + (firstBandThreshold * firstBandPercentage))) {
+                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                return;
+            }
 
         }
 
