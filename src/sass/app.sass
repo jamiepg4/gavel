@@ -216,6 +216,9 @@ div.buttons
 	@include flex-grow(1)
 	text-align: center
 	padding: 5px 10px
+	position: relative
+	top: 4px
+	left: -4px
 
 .widget
 	margin-top: 10px
@@ -275,7 +278,18 @@ footer
 	bottom: 30px
 	height: 30px
 
+footer a
+	width: 58px
+	display: block
+	margin: 0 auto
+
 footer svg
 	display: block
 	margin: 20px auto 0px auto
+
+footer svg #fusion-logo
+	fill: #FFFFFF
+
+footer a:hover svg #fusion-logo
+	fill: #1F1F1C
 
