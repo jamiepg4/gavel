@@ -15,7 +15,8 @@ var autoNumericOptions = {
     'aDec': '.',
     'aSign': '$',
     'wEmpty': 'sign',
-    'aPad': false
+    'aPad': false,
+    'mRound': 'B'
 };
 
 var backgroundImage = Math.floor(Math.random() * 4) + 1;
@@ -181,7 +182,7 @@ $(function () {
             }
 
             var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
-            $('#value').autoNumeric('set', totalPrice);
+            $('#value').autoNumeric('set', Math.round(totalPrice));
 
         },
 
@@ -205,31 +206,41 @@ $(function () {
             var secondBandTaxLiability = 0;
             var thirdBandTaxLiability = 0;
 
+            var originalPrice, difference, finalPrice;
+
             // Flat rate reverse calculation
             if (selectedPlace.get('flatRate')) {
-                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100))));
                 return;
             }
 
             // Reverse, in first band
             if (totalIncludingTax <= (firstBandThreshold + (firstBandThreshold * firstBandPercentage))) {
-                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100))));
                 return;
             }
 
             // Reverse, in second band
-            if (totalIncludingTax >= (firstBandThreshold + (firstBandThreshold * firstBandPercentage)) && totalIncludingTax <= secondBandThreshold) {
-                var originalPrice;
+            if (totalIncludingTax >= (firstBandThreshold + (firstBandThreshold * firstBandPercentage)) && totalIncludingTax < (secondBandThreshold + (firstBandThreshold * firstBandPercentage) + (secondBandThreshold - firstBandThreshold) * secondBandPercentage)) {
                 originalPrice = totalIncludingTax - (firstBandThreshold * firstBandPercentage);
-                var difference = originalPrice - firstBandThreshold;
+                difference = originalPrice - firstBandThreshold;
                 secondBandTaxLiability = difference / (1 + secondBandPercentage);
-                var finalPrice = firstBandThreshold + secondBandTaxLiability;
-
-                $('#hammer').autoNumeric('set', finalPrice);
+                finalPrice = firstBandThreshold + secondBandTaxLiability;
+                $('#hammer').autoNumeric('set', Math.round(finalPrice));
                 return;
             }
 
-
+            // Third band
+            if (totalIncludingTax >= (secondBandThreshold + (firstBandThreshold * firstBandPercentage) + (secondBandThreshold - firstBandThreshold) * secondBandPercentage)) {
+                firstBandTaxLiability = firstBandThreshold * firstBandPercentage;
+                secondBandTaxLiability = (secondBandThreshold - firstBandThreshold) * secondBandPercentage;
+                originalPrice = totalIncludingTax - firstBandTaxLiability - secondBandTaxLiability;
+                difference = originalPrice - secondBandThreshold;
+                thirdBandTaxLiability = difference / (1 + thirdBandPercentage);
+                finalPrice = secondBandThreshold + thirdBandTaxLiability;
+                $('#hammer').autoNumeric('set', Math.round(finalPrice));
+                return;
+            }
             
 
         }
