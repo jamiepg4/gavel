@@ -202,9 +202,9 @@
 	{
 		"id": 20,
 		"name": "Christie's Wine New York",
-		"commissionOne": 0,
+		"commissionOne": 22.5,
 		"commissionOneAmount": 0,
-		"commissionTwo": 0,
+		"commissionTwo": 22.5,
 		"commissionTwoAmount": 0,
 		"commissionThree": 22.5,
 		"currency": "$"
