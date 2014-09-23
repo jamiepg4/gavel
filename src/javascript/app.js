@@ -211,10 +211,26 @@ $(function () {
                 return;
             }
 
+            // Reverse, in first band
             if (totalIncludingTax <= (firstBandThreshold + (firstBandThreshold * firstBandPercentage))) {
                 $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
                 return;
             }
+
+            // Reverse, in second band
+            if (totalIncludingTax >= (firstBandThreshold + (firstBandThreshold * firstBandPercentage)) && totalIncludingTax <= secondBandThreshold) {
+                var originalPrice;
+                originalPrice = totalIncludingTax - (firstBandThreshold * firstBandPercentage);
+                var difference = originalPrice - firstBandThreshold;
+                secondBandTaxLiability = difference / (1 + secondBandPercentage);
+                var finalPrice = firstBandThreshold + secondBandTaxLiability;
+
+                $('#hammer').autoNumeric('set', finalPrice);
+                return;
+            }
+
+
+            
 
         }
 
