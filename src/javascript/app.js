@@ -69,7 +69,7 @@ $(function () {
             'click #button': 'clickButton',
             'change input#hammer': 'updateValue',
             'change input#value': 'updateReverseValue',
-            'keypress': 'updateValue',
+            'keydown': 'updateValue',
             'change .switcher': 'selectPlace',
             'click .widget': 'showEmbed',
             'click .return': 'hideEmbed'
@@ -109,6 +109,16 @@ $(function () {
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
             });
+
+            if (selectedPlace.get('flatRate')) {
+                $('.commission-graph').css('visibility', 'hidden');
+                $('#commission-1').css('visibility', 'hidden');
+                $('#commission-3').css('visibility', 'hidden');
+            } else {
+                $('.commission-graph').css('visibility', 'visible');
+                $('#commission-1').css('visibility', 'visible');
+                $('#commission-3').css('visibility', 'visible');
+            }
 
             $('#commission-1').html(selectedPlace.get('commissionOne') + '%');
             $('#commission-2').html(selectedPlace.get('commissionTwo') + '%');
