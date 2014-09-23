@@ -170,9 +170,9 @@ $(function () {
               thirdBandTaxLiability = (taxablePrice - thirdBandThreshold) * thirdBandPercentage;
             }
 
-            // console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
-            // console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
-            // console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
+            console.log('FIRST BAND TAX LIABILITY: ' + firstBandTaxLiability);
+            console.log('SECOND BAND TAX LIABILITY: ' + secondBandTaxLiability);
+            console.log('THIRD BAND TAX LIABILITY:' + thirdBandTaxLiability);
 
             var totalPrice = taxablePrice + firstBandTaxLiability + secondBandTaxLiability + thirdBandTaxLiability;
             $('#value').autoNumeric('set', totalPrice);
