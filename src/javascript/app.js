@@ -192,11 +192,6 @@ $(function () {
                 return i.get('id') == $('#place').val();
             });
 
-            if (selectedPlace.get('flatRate')) {
-                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
-                return;
-            }
-
             var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
 
@@ -209,6 +204,12 @@ $(function () {
             var firstBandTaxLiability = 0;
             var secondBandTaxLiability = 0;
             var thirdBandTaxLiability = 0;
+
+            // Flat rate reverse calculation
+            if (selectedPlace.get('flatRate')) {
+                $('#hammer').autoNumeric('set', totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100)));
+                return;
+            }
 
             if (totalIncludingTax > firstBandThreshold) {
                 firstBandTaxLiability = (firstBandThreshold * firstBandPercentage);
