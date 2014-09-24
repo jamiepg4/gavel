@@ -70,7 +70,7 @@ $(function () {
             'click #button': 'clickButton',
             'change input#hammer': 'updateValue',
             'change input#value': 'updateReverseValue',
-            // 'keydown': 'updateValue',
+            'keyup': 'keyUp',
             'change .switcher': 'selectPlace',
             'click .widget': 'showEmbed',
             'click .return': 'hideEmbed'
@@ -79,6 +79,16 @@ $(function () {
         initialize: function () {
             $('#hammer').autoNumeric('init', autoNumericOptions);
             $('#value').autoNumeric('init', autoNumericOptions);
+        },
+
+        keyUp: function (e) {
+                if ($("#hammer").is(":focus")) {
+                    this.updateValue();
+                }
+
+                if ($("#value").is(":focus")) {
+                    this.updateReverseValue();
+                }
         },
 
         hideEmbed: function () {
@@ -148,6 +158,11 @@ $(function () {
                 return i.get('id') == $('#place').val();
             });
 
+            if (isNaN(taxablePrice)) {
+                $('#value').autoNumeric('set', 0);
+                return;
+            }
+
             var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
 
@@ -192,6 +207,11 @@ $(function () {
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
             });
+
+            if (isNaN(totalIncludingTax)) {
+                $('#hammer').autoNumeric('set', 0);
+                return;
+            }
 
             var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
