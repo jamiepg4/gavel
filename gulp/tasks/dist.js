@@ -2,18 +2,26 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var minifycss = require('gulp-minify-css');
 var jsonminify = require('gulp-jsonminify');
+var revall = require('gulp-rev-all');
 
-gulp.task('dist', ['build'], function() {
-    gulp
-        .src('./build/app.js')
+gulp.task('copy', ['build'], function() {
+    return gulp.src('./build/**')
+            .pipe(revall({ignore: [/^\/favicon.ico$/g, /^\/index.html/g]}))
+            .pipe(gulp.dest('dist'));
+});
+
+gulp.task('dist', ['copy'], function() {
+
+    gulp.src('./dist/app.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('dist'));
 
-    gulp.src('./build/app.css')
+    gulp.src('./dist/app.css')
         .pipe(minifycss())
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('dist'));
 
-    gulp.src(['./build/*.json'])
+    gulp.src(['./dist/*.json'])
         .pipe(jsonminify())
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('dist'));
+
 });
