@@ -94,12 +94,14 @@ $(function () {
         hideEmbed: function () {
             $('.main').show();
             $('.buttons').show();
+            $('.widget').show();
             $('.widget-text').hide();
         },
 
         showEmbed: function () {
             $('.main').hide();
             $('.buttons').hide();
+            $('.widget').hide();
             $('.widget-text').show();
         },
 
