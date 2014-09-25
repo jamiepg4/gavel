@@ -117,7 +117,7 @@ $(function () {
         },
 
         selectPlace: function (s) {
-            $('#commission-1').html('5');
+            $('.tagline').hide();
 
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
