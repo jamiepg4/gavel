@@ -3,8 +3,14 @@ var uglify = require('gulp-uglify');
 var minifycss = require('gulp-minify-css');
 var jsonminify = require('gulp-jsonminify');
 var revall = require('gulp-rev-all');
+var clean = require('gulp-clean');
 
-gulp.task('copy', ['build'], function() {
+gulp.task('clean', ['build'], function() {
+    return gulp.src('./dist', {read: false})
+                .pipe(clean());
+});
+
+gulp.task('copy', ['clean'], function() {
     return gulp.src('./build/**')
             .pipe(revall({ignore: [/^\/favicon.ico$/g, /^\/index.html/g]}))
             .pipe(gulp.dest('dist'));
