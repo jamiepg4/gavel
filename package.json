@@ -8,9 +8,7 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "coffeeify",
-      "hbsfy"
+      "browserify-shim"
     ]
   },
   "browserify-shim": {
@@ -48,7 +46,6 @@
   "dependencies": {
     "backbone": "~1.1.2",
     "jquery": "~2.1.0",
-    "queue-async": "^1.0.7",
     "underscore": "^1.7.0"
   }
 }
