@@ -59,6 +59,7 @@ $(function () {
     });
 
     var places = new PlaceList();
+    var initial = false;
 
     new PlacesView({el: $('#place'), collection: places});
     places.fetch({reset: true});
@@ -95,6 +96,11 @@ $(function () {
             $('.main').show();
             $('.buttons').show();
             $('.widget').show();
+
+            if (!initial) {
+                $('.tagline').show();
+            }
+
             $('.widget-text').hide();
         },
 
@@ -119,6 +125,8 @@ $(function () {
 
         selectPlace: function (s) {
             $('.tagline').hide();
+
+            initial = true;
 
             var selectedPlace = places.find(function (i) {
                 return i.get('id') == $('#place').val();
