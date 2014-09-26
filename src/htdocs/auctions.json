@@ -51,7 +51,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "SwFr",
+		"currency": "SwF",
 		"flatRate": false
 	},
 	{
@@ -172,7 +172,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 2000000,
 		"commissionThree": 12,
-		"currency": "SwFr",
+		"currency": "SwF",
 		"flatRate": false
 	},
 	{
@@ -183,7 +183,7 @@
 		"commissionTwo": 20,
 		"commissionTwoAmount": 0,
 		"commissionThree": 20,
-		"currency": "SwFr",
+		"currency": "SwF",
 		"flatRate": true
 	},
 	{
