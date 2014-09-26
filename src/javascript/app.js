@@ -102,6 +102,7 @@ $(function () {
             $('.main').hide();
             $('.buttons').hide();
             $('.widget').hide();
+            $('.tagline').hide();
             $('.widget-text').show();
         },
 
