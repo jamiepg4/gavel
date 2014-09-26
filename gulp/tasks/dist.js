@@ -16,15 +16,15 @@ gulp.task('copy', ['clean'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('dist', ['copy'], function() {
+gulp.task('dist', function() {
 
-    gulp.src('./dist/app.js')
+    gulp.src('./dist/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./dist'));
 
-    gulp.src('./dist/app.css')
+    gulp.src('./dist/*.css')
         .pipe(minifycss())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./dist'));
 
     gulp.src(['./dist/*.json'])
         .pipe(jsonminify())
