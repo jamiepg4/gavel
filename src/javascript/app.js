@@ -174,13 +174,13 @@ $(function () {
                 return;
             }
 
-            var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
+            var firstBandPercentage = parseFloat(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
 
-            var secondBandPercentage = parseInt(selectedPlace.get('commissionTwo'), 10) / 100;
+            var secondBandPercentage = parseFloat(selectedPlace.get('commissionTwo'), 10) / 100;
             var secondBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
 
-            var thirdBandPercentage = parseInt(selectedPlace.get('commissionThree'), 10) / 100;
+            var thirdBandPercentage = parseFloat(selectedPlace.get('commissionThree'), 10) / 100;
             var thirdBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
 
             var firstBandTaxLiability = 0;
@@ -224,13 +224,13 @@ $(function () {
                 return;
             }
 
-            var firstBandPercentage = parseInt(selectedPlace.get('commissionOne'), 10) / 100;
+            var firstBandPercentage = parseFloat(selectedPlace.get('commissionOne'), 10) / 100;
             var firstBandThreshold = parseInt(selectedPlace.get('commissionOneAmount'), 10);
 
-            var secondBandPercentage = parseInt(selectedPlace.get('commissionTwo'), 10) / 100;
+            var secondBandPercentage = parseFloat(selectedPlace.get('commissionTwo'), 10) / 100;
             var secondBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
 
-            var thirdBandPercentage = parseInt(selectedPlace.get('commissionThree'), 10) / 100;
+            var thirdBandPercentage = parseFloat(selectedPlace.get('commissionThree'), 10) / 100;
             var thirdBandThreshold = parseInt(selectedPlace.get('commissionTwoAmount'), 10);
 
             var firstBandTaxLiability = 0;
@@ -241,13 +241,13 @@ $(function () {
 
             // Flat rate reverse calculation
             if (selectedPlace.get('flatRate')) {
-                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100))));
+                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseFloat(selectedPlace.get('commissionOne'), 10)/100))));
                 return;
             }
 
             // Reverse, in first band
             if (totalIncludingTax <= (firstBandThreshold + (firstBandThreshold * firstBandPercentage))) {
-                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseInt(selectedPlace.get('commissionOne'), 10)/100))));
+                $('#hammer').autoNumeric('set', Math.round(totalIncludingTax / (1 + (parseFloat(selectedPlace.get('commissionOne'), 10)/100))));
                 return;
             }
 
