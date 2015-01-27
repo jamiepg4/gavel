@@ -16,7 +16,7 @@ gulp.task('copy', ['clean'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('dist', function() {
+gulp.task('dist', ['copy'], function() {
 
     gulp.src('./dist/*.js')
         .pipe(uglify())
